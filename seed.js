@@ -7,7 +7,7 @@ run = async function(){
     let details = db.collection('details')
 
     let data = await details.set('project_name', {
-        "active sections": [],
+        "active_sections": [],
         "text_image": "test text for this section",
         "text_buttons": "test text for sections with buttons",
         "gallery": {
@@ -22,4 +22,4 @@ run = async function(){
      console.log(getData)
 }
 
-run()
+// run()
