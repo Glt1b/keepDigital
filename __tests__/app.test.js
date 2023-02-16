@@ -12,3 +12,25 @@ describe('GET/api/details', () => {
         })
     })
 })
+
+describe('PATCH/api/details', () => {
+    test('200 - update DataBase', () => {
+        const obj = {
+            "active sections": ['text', 'gallery'],
+            "text_image": "test text for this section",
+            "text_buttons": "test text for sections with buttons",
+            "gallery": {
+                "title": "this is title",
+                "img": []
+            },
+            "text": "another test text"
+        }
+        return request(app)
+        .patch('/api/details')
+        .send(obj)
+        .expect(200)
+        .then((res) => {
+            expect(res.body.msg).toBe('data updated')
+        })
+    })
+})
