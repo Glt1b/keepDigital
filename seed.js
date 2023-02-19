@@ -5,13 +5,13 @@ const db = CyclicDB('cyan-sea-urchin-slipCyclicDB')
 run = async function(){
 
     let details = db.collection('details')
-
+    /*
     let data = await details.set('project_name', {
         "active_sections": ["About", "Gallery"],
         "text_about": "This is sample of about text.",
         "image_about": "",
     })
-
+    */
     // let del = await details.delete('project_name')
 
      let getData = await details.get('project_name')
