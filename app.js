@@ -8,13 +8,13 @@ const { getDetails,
 const cors = require("cors");
 const app = express();
 
-app.use(cors({origin: '*'}));
+app.use(cors({origin: '*', methods: '*'}));
 app.use(express.json({limit: '5mb'}));
 
 
 
 app.get("/api/details", getDetails);
-app.post("/api/details", patchDetails);
+app.patch("/api/details", patchDetails);
 
 app.get("/api/image/:url", getImage);
 app.post("/api/image/:url", postImage);
